@@ -1,5 +1,5 @@
 // jest.mock('../index.js') // 使用了__mocks__里面的文件
-import { forEach, fetchUser } from '../index' // __mocks__/index.js
+import { forEach, fetchUser, getDataCallback } from '../index' // __mocks__/index.js
 // let forEach = jest.requireActual('../index.js') // 这是真实的文件./index.js
 
 it('测试foreach，回调函数执行次数', () => {
@@ -17,4 +17,15 @@ it('测试请求列表', async () => {
   expect(data).toEqual({name: 'hello'})
 })
 
+// mock定时器
+jest.useFakeTimers()
 // mock文件，mock模块，某个第三方文件
+it('测试timer到达的时间', () => {
+  // mock函数
+  let fn = jest.fn()
+  // 检查mock函数是否被调用了
+  getDataCallback(fn)
+  jest.runAllTimers()
+  // 这里判断
+  expect(fn).toBeCalled()
+})

@@ -3,7 +3,7 @@
 export default {
   get(url) {
     return new Promise((resolve, reject) => {
-      if (url === '/user') {
+      if (url === '/list') {
         resolve({ name: 'hello' })
       }
     })
