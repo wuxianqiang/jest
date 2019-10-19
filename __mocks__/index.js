@@ -5,3 +5,5 @@ export const fetchUser = () => {
     resolve({name: 'hello'})
   })
 }
+
+// npx jest --init 生成配置文件
