@@ -7,7 +7,7 @@ export function sum (a, b) {
 
 // 回调
 export const getDataCallback = fn => {
-  setTimeout(() => {
+  setInterval(() => {
     fn({name: 'callback'})
   }, 1000);
 }
